@@ -10,7 +10,7 @@ void EndGameCheck(char*); //check the status after the player move
 void main(void)  
 {
 	 char player=1;
-
+system("cls");
 		Drawing(); 
 	do{
 		PlayerMove(player);
@@ -97,28 +97,31 @@ void PlayerMove(char player)
 
 }
 
-	void EndGameCheck(char*PtrtoPlayer)
-	{ 
-				EmptySquare--;
-		if((arr[0][0]==arr[0][1])&&(arr[0][0]==arr[0][2]))
-			GameCheck=2;
-		else if((arr[1][0]==arr[1][1])&&(arr[1][0]==arr[1][2]))
-			GameCheck=2;
-		else if((arr[2][0]==arr[2][1])&&(arr[2][0]==arr[2][2]))
-			GameCheck=2;
-		else if((arr[0][0]==arr[1][0])&&(arr[0][0]==arr[2][0]))
-			GameCheck=2;
-		else if((arr[0][1]==arr[1][1])&&(arr[0][1]==arr[2][1]))
-			GameCheck=2;
-		else if((arr[0][2]==arr[1][2])&&(arr[0][2]==arr[2][2]))
-			GameCheck=2;
-		else if((arr[0][0]==arr[1][1])&&(arr[0][0]==arr[2][2]))
-			GameCheck=2;
-		else if((arr[0][2]==arr[1][1])&&(arr[0][2]==arr[2][0]))
-			GameCheck=2;
-		else if(EmptySquare==0)
-			GameCheck=3;
-		
+void EndGameCheck(char*PtrtoPlayer)
+{ 
+	EmptySquare--;
+	if((arr[0][0]==arr[0][1])&&(arr[0][0]==arr[0][2]))
+		GameCheck=2;
+	else if((arr[1][0]==arr[1][1])&&(arr[1][0]==arr[1][2]))
+		GameCheck=2;
+	else if((arr[2][0]==arr[2][1])&&(arr[2][0]==arr[2][2]))
+		GameCheck=2;
+	else if((arr[0][0]==arr[1][0])&&(arr[0][0]==arr[2][0]))
+		GameCheck=2;
+	else if((arr[0][1]==arr[1][1])&&(arr[0][1]==arr[2][1]))
+		GameCheck=2;
+	else if((arr[0][2]==arr[1][2])&&(arr[0][2]==arr[2][2]))
+		GameCheck=2;
+	else if((arr[0][0]==arr[1][1])&&(arr[0][0]==arr[2][2]))
+		GameCheck=2;
+	else if((arr[0][2]==arr[1][1])&&(arr[0][2]==arr[2][0]))
+		GameCheck=2;
+	else if(EmptySquare==0)
+		GameCheck=3;
+
+
+	if(PtrtoPlayer!=NULL)
+	{
 		if (GameCheck==2)
 		{
 		printf("player %d won  ",*PtrtoPlayer);	
@@ -136,3 +139,5 @@ void PlayerMove(char player)
 			*PtrtoPlayer=1;
 		}
 	}
+
+}
